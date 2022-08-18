@@ -15,9 +15,6 @@ import java.util.Map;
 
 public class LiveMe_Monitor_To_Feishu {
 
-    //WebHook地址xxx
-    public static String WEBHOOK_TOKEN = "https://open.feishu.cn/open-apis/bot/v2/hook/3ba0b039-9d5a-4d5c-93d7-4ea27b100227";
-
     public static void send(String message,String WebHook) throws IOException {
 
         /**
@@ -35,13 +32,8 @@ public class LiveMe_Monitor_To_Feishu {
         JSONObject markdown = JSON.parseObject(jsonObject.get("markdown").toString().replace("\\n \\n\\n","\n").replace("`","").replace("AlarmID"," AlarmID"));
         for (Map.Entry<String, Object> stringObjectEntry : markdown.entrySet()) {
             content = content + stringObjectEntry.getValue().toString().replace("*","").trim() + "\n\n";
-/*
-            String s ="> AlarmDate : [ lag.overflow [ " + content.substring(content.indexOf("AlarmContent")-2).split("\\[", 3)[2].split("\\]", 3)[0] + "] ]";
-            content = content.substring(0,content.indexOf("AlarmContent")-2)+s+"\n\n";
-*/
             content = content.replace("<font color=\"warning\">","").replace("</font>","");
         }
-
         content = content + "<at user_id=\"all\">所有人</at>" + "\n";
 
 
