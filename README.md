@@ -16,8 +16,6 @@
          - 将 KafkaEagle 的告警对接飞书机器人
          - java -jar Feishu-1.0-SNAPSHOT.jar https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxxxxxxxx KafkaEagle 654
 
-- Grafana 告警
+- Grafana 告警（Kafka-Eagle 告警同理）
 
 ![image](https://user-images.githubusercontent.com/100354510/185335386-dbd60916-6593-498b-8160-4a848b0789df.png)
-
-Kafka-Eagle 告警同理
